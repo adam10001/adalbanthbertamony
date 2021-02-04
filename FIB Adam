@@ -1,0 +1,33 @@
+# FIBONACCI DISPLAYER PROGRAM
+# This program will print as many terms in the Fibonacci sequence the user requests.
+
+# Greet the user and find out how many terms they want:
+
+lastTerm = 0
+term = 1
+
+while True:
+    
+    print ('Hey there! I can tell you however many terms of the Fibonacci sequence you want. How many terms would you like to see?')
+
+    termQuantity = int(input()) - 1
+    
+    if termQuantity <0:                     #Make sure the input is valid.
+        print ('Please enter an integer greater than 0.')
+        continue
+    else:
+        print('Term 1 is 1')                #All valid inputs will start with this, so it can be hard entered.
+    
+    termNumber = 1
+
+    for n in range(termQuantity):           #This ties the number of loops to the user input.
+        
+        newTerm = term + lastTerm           #This is the new term we are displaying in this loop.
+        lastTerm = term                     #In the next loop, this will be two terms ago.
+        term = newTerm                      #In the next loop, this will be the previous term.
+        termNumber = termNumber + 1         #This is the number of the term we are displaying in this loop.
+        
+        print ('Term ' + str(termNumber) + ' is ' + str(newTerm))
+        
+    break
+        
